@@ -22,3 +22,5 @@ select * from cliente_aluga_filme;
 
 ### 7- Crie uma visão para trazer os nomes dos clientes (customers) que alugaram os filmes. A consulta deve trazer o nome (first_name + last_name) e os títulos dos filmes alugados. Importante: se o cliente não alugou nada, deve trazer valor nulo.
 R: 
+
+sugestão de resposta: CREATE VIEW nome_cliente_filme AS SELECT c.firt_name, c.last_name, f.title FROM customer c LEFT JOIN rental r ON c.customer_id = r.customer_id LEFT JOIN inventory i ON r.inventory_id = i.inventory_id LEFT JOIN film f ON i.film_id = f.film_id;
