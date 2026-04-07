@@ -2,7 +2,9 @@
 
 
 ### 2- Escolha uma tabela qualquer e crie uma visão sobre ela.
-R: 
+R: create view v_actor_first_name as select first_name from actor;
+
+select * from v_actor_first_name;
 
 ### 3- Escolha duas tabelas com cardinalidade 1:N e crie uma visão que faça uma junção entre elas.
 R: 
