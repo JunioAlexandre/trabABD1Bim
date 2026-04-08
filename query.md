@@ -7,7 +7,16 @@ R: create view v_actor_first_name as select first_name from actor;
 select * from v_actor_first_name;
 
 ### 3- Escolha duas tabelas com cardinalidade 1:N e crie uma visão que faça uma junção entre elas.
-R: 
+R: CREATE VIEW v_film_inventory AS SELECT f.film_id, f.title, i.inventory_id, i.store_id FROM film f
+JOIN inventory i 
+ON f.film_id = i.film_id;
+
+select * from v_film_inventory;
+
+SELECT COUNT(*) FROM inventory i
+JOIN film f 
+ON f.film_id = i.film_id
+WHERE f.title = 'Academy Dinosaur';
 
 ### 4- Crie duas sequencias para serem usadas em duas tabelas quaisquer e faça pelo menos dois inserts em cada uma delas.
 R:
